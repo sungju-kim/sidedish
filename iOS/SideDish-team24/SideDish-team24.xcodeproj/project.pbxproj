@@ -27,6 +27,7 @@
 		F57135BB280E49930040C5A4 /* BriefBanchanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57135BA280E49930040C5A4 /* BriefBanchanViewController.swift */; };
 		F57135BE280E4ABB0040C5A4 /* BriefBanchanViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57135BD280E4ABB0040C5A4 /* BriefBanchanViewCell.swift */; };
 		F57135C2280E98500040C5A4 /* DetailBanchanBriefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57135C1280E98500040C5A4 /* DetailBanchanBriefView.swift */; };
+		F5C9FE932811381500D94CFA /* AmountSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C9FE922811381500D94CFA /* AmountSectionView.swift */; };
 		F5F1A1AA280E4736006EFDE2 /* DetailBanchanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F1A1A9280E4736006EFDE2 /* DetailBanchanViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		F57135BA280E49930040C5A4 /* BriefBanchanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefBanchanViewController.swift; sourceTree = "<group>"; };
 		F57135BD280E4ABB0040C5A4 /* BriefBanchanViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefBanchanViewCell.swift; sourceTree = "<group>"; };
 		F57135C1280E98500040C5A4 /* DetailBanchanBriefView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBanchanBriefView.swift; sourceTree = "<group>"; };
+		F5C9FE922811381500D94CFA /* AmountSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountSectionView.swift; sourceTree = "<group>"; };
 		F5F1A1A9280E4736006EFDE2 /* DetailBanchanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBanchanViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 				F57135C1280E98500040C5A4 /* DetailBanchanBriefView.swift */,
 				6C162B7A280ED461003399BC /* DeliverySectionView.swift */,
 				6C4CEF4A28111FA000AFB684 /* OrderCountSectionView.swift */,
+				F5C9FE922811381500D94CFA /* AmountSectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				6C105832280E6A0E00C0B462 /* UIColorExtension.swift in Sources */,
 				F5F1A1AA280E4736006EFDE2 /* DetailBanchanViewController.swift in Sources */,
 				6CEE0802280D080000D2D401 /* AppDelegate.swift in Sources */,
+				F5C9FE932811381500D94CFA /* AmountSectionView.swift in Sources */,
 				6C4CEF4B28111FA000AFB684 /* OrderCountSectionView.swift in Sources */,
 				6C162B7B280ED461003399BC /* DeliverySectionView.swift in Sources */,
 				6C10583B280E893100C0B462 /* CGFloatExtension.swift in Sources */,
