@@ -1,6 +1,7 @@
 package codesquad.sidedish.domain.item;
 
 import codesquad.sidedish.domain.discount.DiscountPolicy;
+import codesquad.sidedish.domain.mileage.MileagePolicy;
 import codesquad.sidedish.exception.NotEnoughStockException;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -15,8 +16,6 @@ import java.util.stream.Collectors;
 @EqualsAndHashCode
 @ToString
 public class Item {
-
-    private static final double MILEAGE_RATE = 0.01;
 
     private Long itemId;
     private String name;
@@ -75,7 +74,7 @@ public class Item {
     }
 
     public int getMileage() {
-        return (int)(getDiscountedItemPrice() * MILEAGE_RATE);
+        return (int)(getDiscountedItemPrice() * MileagePolicy.MILEAGE_RATE);
     }
 
     public List<String> getMainImageUrls() {
