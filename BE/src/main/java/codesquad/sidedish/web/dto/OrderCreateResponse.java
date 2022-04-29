@@ -1,21 +1,37 @@
 package codesquad.sidedish.web.dto;
 
+import codesquad.sidedish.domain.order.Order;
 import lombok.Getter;
 
 @Getter
 public class OrderCreateResponse {
 
-    private Long orderId = 4L;
-    private String orderMemberName = "sampleMember";
-    private String deliveryAddress = "서울특별시 강남구";
-    private String orderItemName = "땃쥐고기";
-    private int originalItemPrice = 10000;
-    private int discountedItemPrice = 8000;
-    private int orderItemCount = 3;
-    private String discountPolicy = "런칭특가";
-    private String deliveryType = "새벽배송";
-    private int deliveryFee = 2500;
-    private int totalPrice = 26500;
-    private int mileage = 240;
+    private Long orderId;
+    private String orderMemberName;
+    private String deliveryAddress;
+    private String orderItemName;
+    private int originalItemPrice;
+    private int discountedItemPrice;
+    private int orderItemCount;
+    private String discountPolicy;
+    private String deliveryType;
+    private int deliveryFee;
+    private int totalPrice;
+    private int mileage;
+
+    public OrderCreateResponse(Order order) {
+        this.orderId = order.getOrderId();
+        this.orderMemberName = order.getMember().getMemberName();
+        this.deliveryAddress = order.getDelivery().getAddress().fullname();
+        this.orderItemName = order.getItem().getName();
+        this.originalItemPrice = order.getOrderItemPrice();
+        this.discountedItemPrice = order.getDiscountedItemPrice();
+        this.orderItemCount = order.getItemCount();
+        this.discountPolicy = order.getDiscountPolicy().getName();
+        this.deliveryType = order.getDelivery().getDeliveryType().name();
+        this.deliveryFee = order.getDelivery().getDeliveryFee();
+        this.totalPrice = order.getTotalPrice();
+        this.mileage = order.getOrderMileage();
+    }
 
 }

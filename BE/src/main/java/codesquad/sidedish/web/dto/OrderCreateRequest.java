@@ -8,8 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderCreateRequest {
-
     private Long itemId;
     private int count;
-
 }
