@@ -20,8 +20,8 @@ public class Delivery {
     private DeliveryType deliveryType;
     private Address address;
 
-    public Delivery(int deliveryFee, DeliveryType deliveryType, Address address) {
-        this.deliveryFee = deliveryFee;
+    public Delivery(int itemTotalPrice, DeliveryType deliveryType, Address address) {
+        this.deliveryFee = initDeliveryFee(itemTotalPrice);
         this.deliveryType = deliveryType;
         this.address = address;
     }
@@ -33,8 +33,15 @@ public class Delivery {
         this.deliveryType = deliveryType;
         this.address = address;
     }
-
     public void initDeliveryId(Long deliveryId) {
         this.deliveryId = deliveryId;
+    }
+
+    private int initDeliveryFee(int itemTotalPrice) {
+        return (isSupportFreeDelivery(itemTotalPrice)) ? FREE_DELIVERY_FEE : DEFAULT_DELIVERY_FEE;
+    }
+
+    public static boolean isSupportFreeDelivery(int itemTotalPrice) {
+        return itemTotalPrice >= MINIMUM_PRICE_FOR_FREE_DELIVERY;
     }
 }
