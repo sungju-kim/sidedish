@@ -4,6 +4,7 @@ import codesquad.sidedish.domain.delivery.Delivery;
 import codesquad.sidedish.domain.discount.DiscountPolicy;
 import codesquad.sidedish.domain.item.Item;
 import codesquad.sidedish.domain.member.Member;
+import codesquad.sidedish.domain.mileage.MileagePolicy;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -43,6 +44,24 @@ public class Order {
 
     public void initOrderId(Long orderId) {
         this.orderId = orderId;
+    }
+
+    public int getTotalPrice() {
+        int totalItemPrice = getTotalItemPrice();
+        int deliveryFee = delivery.getDeliveryFee();
+        return totalItemPrice + deliveryFee;
+    }
+
+    private int getTotalItemPrice() {
+        return getDiscountedItemPrice() * itemCount;
+    }
+
+    public int getDiscountedItemPrice() {
+        return discountPolicy.calculateDiscountedPrice(orderItemPrice);
+    }
+
+    public int getOrderMileage() {
+        return (int)(getTotalItemPrice() * MileagePolicy.MILEAGE_RATE);
     }
 }
 
