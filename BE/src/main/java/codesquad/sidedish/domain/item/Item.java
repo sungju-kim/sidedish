@@ -93,6 +93,14 @@ public class Item {
                 .map(ItemImage::getItemImageUrl)
                 .collect(Collectors.toList());
     }
+
+    public int calculateTotalPrice(int purchaseQuantity) {
+        return getDiscountedItemPrice() * purchaseQuantity;
+    }
+
+    public int calculateTotalMileage(int purchaseCount) {
+        return this.getMileage() * purchaseCount;
+    }
 }
 
 
