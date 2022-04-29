@@ -16,5 +16,8 @@ public class Address {
         this.city = city;
     }
 
+    public String fullname() {
+        return String.format("%s %s", district, city);
+    }
 
 }
