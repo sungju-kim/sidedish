@@ -1,5 +1,6 @@
 package codesquad.sidedish.domain.item;
 
+import codesquad.sidedish.exception.NotEnoughStockException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -21,7 +22,7 @@ class ItemTest {
         Item item = Item.builder().stock(10).build();
 
         assertThatThrownBy(() -> item.reduceStock(20))
-                .isInstanceOf(IllegalArgumentException.class);
+                .isInstanceOf(NotEnoughStockException.class);
     }
 
 }
